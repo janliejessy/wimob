@@ -17,10 +17,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainMenu" />
+        <activity android:name=".MainMenu2" />
         <activity android:name=".ui.ListActivity" />
         <activity android:name=".ui.DetailActivity"></activity>
         <activity android:name=".ui.CartListActivity"></activity>
+        <activity android:name=".HomeActivity"></activity>
+        <activity android:name=".ServiceActivity"></activity>
+        <activity android:name=".BillActivity"></activity>
+        <activity android:name=".FinishOrderActivity"></activity>
     </application>
 
 </manifest>

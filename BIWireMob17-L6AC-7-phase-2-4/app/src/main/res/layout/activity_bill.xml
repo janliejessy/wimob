@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.wirelessmobile.menuq.BillActivity">
+
+    <TextView
+        android:id="@+id/billActivityTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your Bill"
+        android:textSize="30dp"
+        android:textColor="#000000"
+        android:textAlignment="center"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"/>
+
+    <ListView
+        android:id="@+id/billListView"
+        android:layout_width="match_parent"
+        android:layout_height="370dp"
+        android:layout_below="@+id/billActivityTitle"/>
+
+    <Button
+        android:id="@+id/btn_finish_order"
+        android:text="Finish Order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/billListView"
+        android:layout_centerHorizontal="true"/>
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:design="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.wirelessmobile.menuq.BillActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_gravity="bottom"
+        android:layout_height="wrap_content">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="@drawable/shadow"
+            />
+
+        <android.support.design.widget.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/bottomNavbar"
+            app:menu="@menu/menu_navigation"
+            android:background="#c42121"
+            app:itemIconTint="#ffffff"
+            app:itemTextColor="#ffffff"
+            />
+
+    </FrameLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>
+
+</RelativeLayout>
