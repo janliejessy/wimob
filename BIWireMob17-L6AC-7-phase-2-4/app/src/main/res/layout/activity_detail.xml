@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    tools:context=".ui.DetailActivity">
+
+    <ImageView
+        android:id="@+id/im_item_icon"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@color/colorPrimary"
+        android:padding="36dp"
+        android:src="@drawable/ic_tag_faces_black_36dp"
+        android:tint="#FFFFFF"/>
+
+    <TextView
+        android:id="@+id/item_txtName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:layout_below="@+id/im_item_icon"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="18dp"/>
+
+    <TextView
+        android:id="@+id/item_txtDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:textStyle="italic"
+        android:layout_below="@+id/item_txtName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:paddingLeft="18dp"/>
+
+    <Button
+        android:id="@+id/btn_min"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:layout_marginLeft="34dp"
+        android:layout_alignBaseline="@+id/item_txtQuantity"
+        android:layout_alignBottom="@+id/item_txtQuantity"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/item_txtQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:textSize="16dp"
+        android:text="2"
+        android:layout_marginLeft="12dp"
+        android:layout_marginBottom="34dp"
+        android:layout_above="@+id/bill"
+        android:layout_toEndOf="@+id/bill" />
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="+"
+        android:layout_alignBaseline="@+id/item_txtQuantity"
+        android:layout_alignBottom="@+id/item_txtQuantity"
+        android:layout_toEndOf="@+id/item_txtQuantity" />
+
+    <Button
+        android:id="@+id/btn_add_to_cart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add to Cart"
+        android:layout_marginLeft="35dp"
+        android:layout_alignBaseline="@+id/item_txtQuantity"
+        android:layout_alignBottom="@+id/item_txtQuantity"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:id="@+id/bill"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:text="Bill"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/order"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:text="Order"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/waiter"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:text="Waiter"
+        android:layout_alignBottom="@+id/order"
+        android:layout_alignEnd="@+id/im_item_icon"
+        android:layout_alignTop="@+id/order" />
+
+    <TextView
+        android:id="@+id/item_txtPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/item_txtDesc"
+        android:layout_alignStart="@+id/btn_min" />
+
+</RelativeLayout>
