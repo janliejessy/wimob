@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bottomNavbar_home"
+        android:title="Home"
+        android:icon="@drawable/ic_home"/>
+
+    <item
+        android:id="@+id/bottomNavbar_service"
+        android:title="Service"
+        android:icon="@drawable/ic_face"/>
+
+    <item
+        android:id="@+id/bottomNavbar_cart"
+        android:title="Cart"
+        android:icon="@drawable/ic_cart"/>
+
+    <item
+        android:id="@+id/bottomNavbar_bill"
+        android:title="Bill"
+        android:icon="@drawable/ic_bill"/>
+
+</menu>
