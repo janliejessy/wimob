@@ -8,8 +8,41 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rec_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="450dp">
 
     </android.support.v7.widget.RecyclerView>
+
+    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:design="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_gravity="bottom"
+            android:layout_height="wrap_content">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:background="@drawable/shadow"
+                />
+
+            <android.support.design.widget.BottomNavigationView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/bottomNavbar"
+                app:menu="@menu/menu_navigation"
+                android:background="#c42121"
+                app:itemIconTint="#ffffff"
+                app:itemTextColor="#ffffff"
+                />
+
+        </FrameLayout>
+
+
+    </android.support.design.widget.CoordinatorLayout>
 
 </RelativeLayout>

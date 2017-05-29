@@ -1,4 +1,4 @@
-package com.example.wirelessmobile.menuq;
+package com.example.wirelessmobile.menuq.ui;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -11,8 +11,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.wirelessmobile.menuq.ui.CartListActivity;
-import com.example.wirelessmobile.menuq.ui.ListActivity;
+import com.example.wirelessmobile.menuq.BottomNavigationViewHelper;
+import com.example.wirelessmobile.menuq.R;
 
 
 public class HomeActivity extends AppCompatActivity {
@@ -30,6 +30,7 @@ public class HomeActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavbar);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
 
+        // do something when menu navigation is clicked
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -100,7 +101,7 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
-    // popup for service
+    // popup for service menu navigation
     private void showSimplePopUp() {
         AlertDialog.Builder helpBuilder = new AlertDialog.Builder(this);
         helpBuilder.setTitle("Need help?");

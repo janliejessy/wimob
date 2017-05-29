@@ -5,47 +5,89 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.wirelessmobile.menuq.HomeActivity">
+    tools:context="com.example.wirelessmobile.menuq.ui.HomeActivity">
+
+    <TextView
+        android:id="@+id/homeActivityTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Food Categories"
+        android:textSize="30dp"
+        android:textColor="#000000"
+        android:textAlignment="center"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"/>
 
     <Button
         android:id="@+id/appetizer"
         android:layout_width="350dp"
         android:layout_height="80dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        android:background="#f1a496"
+        android:layout_marginTop="65dp"
         android:onClick="appetizersButtonPressed"
-        android:text="Appetizers" />
+        android:text="Appetizers"
+        android:textColor="#ffffff"
+        android:textSize="30dp"
+        android:background="@drawable/appetizer"
+        android:textColorHighlight="#000000"
+        android:shadowColor="#000000"
+        android:shadowDx="4.0"
+        android:shadowDy="4.0"
+        android:shadowRadius="20.0" />
 
     <Button
         android:id="@+id/main_course"
         android:layout_width="350dp"
         android:layout_height="80dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="125dp"
-        android:background="#f1a496"
+        android:layout_marginTop="163dp"
         android:onClick="mainCourseButtonPressed"
-        android:text="Main Course" />
+        android:text="Main Course"
+        android:textColor="#ffffff"
+        android:textColorHint="#000000"
+        android:textSize="30dp"
+        android:background="@drawable/main_course"
+        android:textColorHighlight="#000000"
+        android:shadowColor="#000000"
+        android:shadowDx="4.0"
+        android:shadowDy="4.0"
+        android:shadowRadius="20.0" />
 
     <Button
         android:id="@+id/drink"
         android:layout_width="350dp"
         android:layout_height="80dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="220dp"
-        android:background="#f1a496"
+        android:layout_marginTop="260dp"
         android:onClick="drinkButtonPressed"
-        android:text="Drinks" />
+        android:text="Drinks"
+        android:textColor="#ffffff"
+        android:textColorHint="#000000"
+        android:textSize="30dp"
+        android:background="@drawable/drink"
+        android:textColorHighlight="#000000"
+        android:shadowColor="#000000"
+        android:shadowDx="4.0"
+        android:shadowDy="4.0"
+        android:shadowRadius="20.0"/>
 
     <Button
         android:id="@+id/dessert"
         android:layout_width="350dp"
         android:layout_height="80dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="315dp"
-        android:background="#f1a496"
+        android:layout_marginTop="358dp"
         android:onClick="dessertButtonPressed"
-        android:text="Dessert" />
+        android:text="Desserts"
+        android:textColor="#ffffff"
+        android:textColorHint="#000000"
+        android:textSize="30dp"
+        android:background="@drawable/desserts"
+        android:textColorHighlight="#000000"
+        android:shadowColor="#000000"
+        android:shadowDx="4.0"
+        android:shadowDy="4.0"
+        android:shadowRadius="20.0"/>
 
 
 
@@ -73,5 +115,7 @@
             />
 
     </FrameLayout>
+
+
 
 </android.support.design.widget.CoordinatorLayout>

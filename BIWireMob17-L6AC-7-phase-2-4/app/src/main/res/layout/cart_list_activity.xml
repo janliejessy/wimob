@@ -20,7 +20,7 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rec_list"
         android:layout_width="match_parent"
-        android:layout_height="370dp"
+        android:layout_height="310dp"
         android:layout_below="@+id/cartActivityTitle"
         android:textAlignment="center">
     </android.support.v7.widget.RecyclerView>
@@ -29,7 +29,7 @@
         android:id="@+id/btn_order"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/rec_list"
+        android:layout_marginTop="390dp"
         android:layout_centerHorizontal="true"
         android:text="Order" />
 

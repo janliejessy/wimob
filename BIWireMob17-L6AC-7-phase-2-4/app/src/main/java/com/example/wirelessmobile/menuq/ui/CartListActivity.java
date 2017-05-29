@@ -6,7 +6,6 @@ package com.example.wirelessmobile.menuq.ui;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AlertDialog;
@@ -20,9 +19,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.wirelessmobile.menuq.BillActivity;
 import com.example.wirelessmobile.menuq.BottomNavigationViewHelper;
-import com.example.wirelessmobile.menuq.HomeActivity;
 import com.example.wirelessmobile.menuq.R;
 import com.example.wirelessmobile.menuq.adapter.DerpAdapter;
 import com.example.wirelessmobile.menuq.model.CartHelper;
@@ -60,7 +57,7 @@ public class CartListActivity extends AppCompatActivity {
 
         orderButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //ganti masuk realm
+                // put into realm
                 if(!CartHelper.getCart().isEmpty()){
                     DatabaseLogic.add_cart_to_order_list(mCartList);
                     CartHelper.deleteCart();
@@ -78,9 +75,11 @@ public class CartListActivity extends AppCompatActivity {
         TextView title = (TextView) findViewById(R.id.cartActivityTitle);
         title.setText("Your Cart");
 
+        // BOTTOM NAVBAR
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavbar);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
 
+        // do something when menu navigation is clicked
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -105,6 +104,7 @@ public class CartListActivity extends AppCompatActivity {
         });
     }
 
+    // popup for service
     private void showSimplePopUp() {
         AlertDialog.Builder helpBuilder = new AlertDialog.Builder(this);
         helpBuilder.setTitle("Need help?");

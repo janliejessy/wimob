@@ -10,21 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name="BaseApplication">
-        <activity android:name=".Welcome">
+        <activity android:name=".ui.Welcome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainMenu2" />
         <activity android:name=".ui.ListActivity" />
         <activity android:name=".ui.DetailActivity"></activity>
         <activity android:name=".ui.CartListActivity"></activity>
-        <activity android:name=".HomeActivity"></activity>
-        <activity android:name=".BillActivity"></activity>
-        <activity android:name=".FinishOrderActivity"></activity>
-        <!--<activity android:name=".MainActivity"></activity>-->
+        <activity android:name=".ui.HomeActivity"></activity>
+        <activity android:name=".ui.BillActivity"></activity>
+        <activity android:name=".ui.FinishOrderActivity"></activity>
     </application>
 
 </manifest>

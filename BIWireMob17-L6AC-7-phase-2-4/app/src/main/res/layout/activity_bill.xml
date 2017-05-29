@@ -4,16 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.wirelessmobile.menuq.BillActivity">
+    tools:context="com.example.wirelessmobile.menuq.ui.BillActivity">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rec_list"
-        android:layout_width="match_parent"
-        android:layout_height="370dp"
-        android:layout_below="@+id/billActivityTitle"
-        android:textAlignment="center">
-
-    </android.support.v7.widget.RecyclerView>
     <TextView
         android:id="@+id/billActivityTitle"
         android:layout_width="match_parent"
@@ -25,23 +17,32 @@
         android:layout_marginTop="15dp"
         android:layout_marginBottom="10dp"/>
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rec_list"
+        android:layout_width="match_parent"
+        android:layout_height="310dp"
+        android:layout_below="@+id/billActivityTitle"
+        android:textAlignment="center">
 
+    </android.support.v7.widget.RecyclerView>
 
     <Button
         android:id="@+id/btn_finish_order"
-        android:text="Finish Order"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/rec_list"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="390dp"
+        android:text="Finish Order" />
 
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:design="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.wirelessmobile.menuq.BillActivity">
+
+    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:design="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/billActivityTitle">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -67,6 +68,8 @@
     </FrameLayout>
 
 
-</android.support.design.widget.CoordinatorLayout>
+
+
+    </android.support.design.widget.CoordinatorLayout>
 
 </RelativeLayout>

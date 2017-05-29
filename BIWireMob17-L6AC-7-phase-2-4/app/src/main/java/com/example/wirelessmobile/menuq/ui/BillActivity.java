@@ -1,9 +1,8 @@
-package com.example.wirelessmobile.menuq;
+package com.example.wirelessmobile.menuq.ui;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
@@ -13,20 +12,14 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.example.wirelessmobile.menuq.BottomNavigationViewHelper;
+import com.example.wirelessmobile.menuq.R;
 import com.example.wirelessmobile.menuq.adapter.BillAdapter;
-import com.example.wirelessmobile.menuq.adapter.DerpAdapter;
-import com.example.wirelessmobile.menuq.model.CartHelper;
 import com.example.wirelessmobile.menuq.model.DatabaseLogic;
 import com.example.wirelessmobile.menuq.model.FoodMenu;
-import com.example.wirelessmobile.menuq.ui.CartListActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,7 +49,7 @@ public class BillActivity extends AppCompatActivity {
         adapter = new BillAdapter(mOrderList, this);
         recView.setAdapter(adapter);
 
-        // Finish order button
+        // Finish order button and alert
         finishOrderButton = (Button)findViewById(R.id.btn_finish_order);
 
         finishOrderButton.setOnClickListener(new View.OnClickListener() {
@@ -85,9 +78,11 @@ public class BillActivity extends AppCompatActivity {
         TextView title = (TextView) findViewById(R.id.billActivityTitle);
         title.setText("Your Bill");
 
+        // BOTTOM NAVBAR
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavbar);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
 
+        // do something when menu navigation is clicked
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -112,6 +107,7 @@ public class BillActivity extends AppCompatActivity {
         });
     }
 
+    // popup for service
     private void showSimplePopUp() {
         AlertDialog.Builder helpBuilder = new AlertDialog.Builder(this);
         helpBuilder.setTitle("Need help?");

@@ -1,14 +1,20 @@
 package com.example.wirelessmobile.menuq.ui;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.MenuItem;
 
+import com.example.wirelessmobile.menuq.BottomNavigationViewHelper;
 import com.example.wirelessmobile.menuq.R;
 import com.example.wirelessmobile.menuq.adapter.FoodAdapter;
 import com.example.wirelessmobile.menuq.model.DatabaseLogic;
@@ -62,20 +68,48 @@ public class ListActivity extends AppCompatActivity implements FoodAdapter.itemC
         int catID = Integer.parseInt(value);
         Log.i("CATID >>", String.valueOf(catID));
 
-        //create the recyclerview based on the data obtain from db
-        //
+        //create the recyclerview based on the data obtained from db
         listData = (ArrayList) DatabaseLogic.get_data_from_database(catID);
-        //
+
         recView = (RecyclerView)findViewById(R.id.rec_list);
-        // LayoutManager: GridLayoutManager or StaggeredGridLayoutManager
+
         recView.setLayoutManager(new LinearLayoutManager(this));
 
         adapter = new FoodAdapter(DatabaseLogic.get_data_from_database(catID), this);
         recView.setAdapter(adapter);
         adapter.setItemClickCallback(this);
+
+        // BOTTOM NAVBAR
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavbar);
+        BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
+
+        // do something when menu navigation is clicked
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch(item.getItemId()) {
+                    case R.id.bottomNavbar_home:
+                        Intent intent0 = new Intent(ListActivity.this, HomeActivity.class);
+                        startActivity(intent0);
+                        break;
+                    case R.id.bottomNavbar_service:
+                        showSimplePopUp();
+                        break;
+                    case R.id.bottomNavbar_cart:
+                        Intent intent2 = new Intent(ListActivity.this, CartListActivity.class);
+                        startActivity(intent2);
+                        break;
+                    case R.id.bottomNavbar_bill:
+                        Intent intent3 = new Intent(ListActivity.this, BillActivity.class);
+                        startActivity(intent3);
+                        break;
+                }
+                return false;
+            }
+        });
     }
 
-    //this function is too create a new intent based on what the user clicked
+    //this function is to create a new intent based on what the user clicked
     @Override
     public void onItemClick(int p) {
         FoodMenu item = (FoodMenu) listData.get(p);
@@ -91,6 +125,23 @@ public class ListActivity extends AppCompatActivity implements FoodAdapter.itemC
         i.putExtra(BUNDLE_EXTRAS, extras);
 
         startActivityForResult(i, 0);
+    }
+
+    // popup for service
+    private void showSimplePopUp() {
+        AlertDialog.Builder helpBuilder = new AlertDialog.Builder(this);
+        helpBuilder.setTitle("Need help?");
+        helpBuilder.setMessage("Please raise your hand should you need our assistance.");
+        helpBuilder.setPositiveButton("OK",
+                new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Do nothing but close the dialog
+                    }
+                });
+        // Remember, create doesn't show the dialog
+        AlertDialog helpDialog = helpBuilder.create();
+        helpDialog.show();
     }
 }
 

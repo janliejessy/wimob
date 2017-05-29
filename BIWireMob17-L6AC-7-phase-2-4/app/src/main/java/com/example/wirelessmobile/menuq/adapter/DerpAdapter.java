@@ -52,7 +52,7 @@ public class DerpAdapter extends RecyclerView.Adapter<DerpAdapter.DerpHolder> {
     public void onBindViewHolder(DerpHolder holder, int position) {
         FoodMenu item = listData.get(position);
         holder.subtitle.setText(item.getTitle());
-        holder.quantity.setText("qty: " + item.getQty());
+        holder.quantity.setText("x " + item.getQty());
         holder.thumbnail.setImageResource(item.getDrawable());
 
     }
