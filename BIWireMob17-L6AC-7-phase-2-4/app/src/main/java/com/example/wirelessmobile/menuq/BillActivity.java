@@ -81,8 +81,7 @@ public class BillActivity extends AppCompatActivity {
                         startActivity(intent0);
                         break;
                     case R.id.bottomNavbar_service:
-                        Intent intent1 = new Intent(BillActivity.this, ServiceActivity.class);
-                        startActivity(intent1);
+                        showSimplePopUp();
                         break;
                     case R.id.bottomNavbar_cart:
                         Intent intent2 = new Intent(BillActivity.this, CartListActivity.class);
@@ -97,6 +96,21 @@ public class BillActivity extends AppCompatActivity {
         });
     }
 
+    private void showSimplePopUp() {
+        AlertDialog.Builder helpBuilder = new AlertDialog.Builder(this);
+        helpBuilder.setTitle("Need help?");
+        helpBuilder.setMessage("Please raise your hand should you need our assistance.");
+        helpBuilder.setPositiveButton("OK",
+                new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Do nothing but close the dialog
+                    }
+                });
+        // Remember, create doesn't show the dialog
+        AlertDialog helpDialog = helpBuilder.create();
+        helpDialog.show();
+    }
 //    // masukin food ke appetizers
 //    private void populateAppetizersList() {
 //        appetizers.add(new Food("Nachos", "Crisp and savoury!", R.drawable.nachos, 39999, 2));

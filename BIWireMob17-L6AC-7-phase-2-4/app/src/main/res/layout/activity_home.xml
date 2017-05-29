@@ -1,6 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:design="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.wirelessmobile.menuq.HomeActivity">
 
-</LinearLayout>
+    <Button
+        android:id="@+id/appetizer"
+        android:layout_width="350dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:background="#f1a496"
+        android:onClick="appetizersButtonPressed"
+        android:text="Appetizers" />
+
+    <Button
+        android:id="@+id/main_course"
+        android:layout_width="350dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="125dp"
+        android:background="#f1a496"
+        android:onClick="mainCourseButtonPressed"
+        android:text="Main Course" />
+
+    <Button
+        android:id="@+id/drink"
+        android:layout_width="350dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="220dp"
+        android:background="#f1a496"
+        android:onClick="drinkButtonPressed"
+        android:text="Drinks" />
+
+    <Button
+        android:id="@+id/dessert"
+        android:layout_width="350dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="315dp"
+        android:background="#f1a496"
+        android:onClick="dessertButtonPressed"
+        android:text="Dessert" />
+
+
+
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_gravity="bottom"
+        android:layout_height="wrap_content">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="@drawable/shadow"
+            />
+
+        <android.support.design.widget.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/bottomNavbar"
+            app:menu="@menu/menu_navigation"
+            android:background="#c42121"
+            app:itemIconTint="#ffffff"
+            app:itemTextColor="#ffffff"
+            />
+
+    </FrameLayout>
+
+</android.support.design.widget.CoordinatorLayout>
